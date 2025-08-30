@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mosaic/mosaic.dart';
-import 'package:mosaic_devtools/inspector_card.dart';
 
 class DevToolsModule extends Module {
   DevToolsModule() : super(name: 'devtools');
@@ -11,16 +11,16 @@ class DevToolsModule extends Module {
   }
 }
 
-class DevToolsDashboard extends StatefulWidget {
-  const DevToolsDashboard({super.key});
+class DevToolsDashboard extends ModularStatefulWidget {
+  const DevToolsDashboard({super.key}) : super(path: const ['devtools']);
 
   @override
-  State<DevToolsDashboard> createState() => _DevToolsDashboardState();
+  ModularState<DevToolsDashboard> createState() => _DevToolsDashboardState();
 }
 
-class _DevToolsDashboardState extends State<DevToolsDashboard>
-    with TickerProviderStateMixin, Admissible {
-  final List<InspectorCard> _inspectorCards = [];
+class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
+    with TickerProviderStateMixin {
+  _DevToolsDashboardState() : super('dashboard');
 
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
@@ -38,9 +38,6 @@ class _DevToolsDashboardState extends State<DevToolsDashboard>
       end: 1.0,
     ).animate(CurvedAnimation(parent: _fadeController, curve: Curves.easeOut));
 
-    // Listen for inspector card injections
-    on<ModularExtension>('devtools/dashboard/*', _onInspectorCardAdded);
-
     _fadeController.forward();
   }
 
@@ -48,19 +45,6 @@ class _DevToolsDashboardState extends State<DevToolsDashboard>
   void dispose() {
     _fadeController.dispose();
     super.dispose();
-  }
-
-  void _onInspectorCardAdded(EventContext<ModularExtension> context) {
-    final extension = context.data;
-    if (extension != null) {
-      final widget = extension.builder(this.context);
-      if (widget is InspectorCard) {
-        setState(() {
-          _inspectorCards.add(widget);
-          _inspectorCards.sort((a, b) => a.priority.compareTo(b.priority));
-        });
-      }
-    }
   }
 
   @override
@@ -89,6 +73,32 @@ class _DevToolsDashboardState extends State<DevToolsDashboard>
               ),
               child: Row(
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 16),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.03),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.white.withOpacity(0.1)),
+                    ),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () {
+                          HapticFeedback.lightImpact();
+                          context.goBack();
+                        },
+                        borderRadius: BorderRadius.circular(8),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Icon(
+                            Icons.arrow_back_ios_new,
+                            color: Colors.white.withOpacity(0.7),
+                            size: 16,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   Container(
                     width: 12,
                     height: 12,
@@ -143,7 +153,7 @@ class _DevToolsDashboardState extends State<DevToolsDashboard>
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          '${_inspectorCards.length} inspectors',
+                          '${extensions.length} inspectors',
                           style: TextStyle(
                             color: Colors.white.withOpacity(0.7),
                             fontSize: 12,
@@ -159,7 +169,7 @@ class _DevToolsDashboardState extends State<DevToolsDashboard>
 
             // Inspector Cards Grid
             Expanded(
-              child: _inspectorCards.isEmpty
+              child: extensions.isEmpty
                   ? _buildEmptyState()
                   : _buildInspectorGrid(),
             ),
@@ -216,20 +226,20 @@ class _DevToolsDashboardState extends State<DevToolsDashboard>
 
   Widget _buildInspectorGrid() {
     return Padding(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(15),
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1.6,
+          childAspectRatio: 2,
           crossAxisSpacing: 24,
           mainAxisSpacing: 24,
         ),
-        itemCount: _inspectorCards.length,
+        itemCount: extensions.length,
         itemBuilder: (context, index) {
           return AnimatedContainer(
             duration: Duration(milliseconds: 300 + (index * 100)),
             curve: Curves.easeOutBack,
-            child: _inspectorCards[index],
+            child: extensions[index].builder(context),
           );
         },
       ),

@@ -22,7 +22,7 @@ class MosaicDevtools extends StatefulWidget {
     return MosaicDevtools._(position: position, child: child);
   }
 
-  static Future<void> init() async {
+  static Future<List<Module>> init() async {
     final devtools = DevToolsModule();
     await moduleManager.register(devtools);
 
@@ -41,6 +41,8 @@ class MosaicDevtools extends StatefulWidget {
     final routerModule = RouterInspectorModule();
     routerModule.dependencies.add(devtools);
     await moduleManager.register(routerModule);
+
+    return [devtools, eventModule, loggerModule, module, routerModule];
   }
 
   @override
@@ -116,33 +118,17 @@ class _MosaicDevtoolsState extends State<MosaicDevtools>
       builder: (context, child) {
         return Transform.scale(
           scale: _isDevtoolsOpen ? 1.0 : _pulseAnimation.value,
-          child: Material(
-            elevation: 8,
-            borderRadius: BorderRadius.circular(28),
-            color: Colors.grey[900],
-            child: Container(
-              width: 56,
-              height: 56,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(28),
-                border: Border.all(
-                  color: _isDevtoolsOpen
-                      ? Colors.orange
-                      : Colors.orange.withOpacity(0.3),
-                  width: 2,
-                ),
-              ),
-              child: IconButton(
-                onPressed: () => router.go('devtools'),
-                icon: Icon(
-                  Icons.developer_mode,
-                  color: _isDevtoolsOpen
-                      ? Colors.orange
-                      : Colors.orange.withOpacity(0.8),
-                  size: 24,
-                ),
-                tooltip: 'Open Mosaic DevTools',
-              ),
+          child: FloatingActionButton(
+            backgroundColor: Colors.grey[850],
+            elevation: 0, // no shadow = calmer
+            onPressed: () => router.go('devtools'),
+            tooltip: 'Open Mosaic DevTools',
+            child: Icon(
+              Icons.settings,
+              size: 22,
+              color: _isDevtoolsOpen
+                  ? Colors.orange
+                  : Colors.orange.withOpacity(0.7),
             ),
           ),
         );

@@ -48,7 +48,7 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
     ).animate(CurvedAnimation(parent: _fadeController, curve: Curves.easeOut));
 
     _fadeController.forward();
-    _setupLogCapture();
+    WidgetsBinding.instance.addPostFrameCallback(_setupLogCapture);
   }
 
   @override
@@ -60,12 +60,12 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
     super.dispose();
   }
 
-  void _setupLogCapture() {
+  void _setupLogCapture(_) {
     _loggerWrapper = (String message, LogType type, List<String> tags) {
       if (!_isPaused) {
         _addLogEntry(message, type, tags);
       }
-      return message; // Return unchanged message
+      return message;
     };
 
     logger.addWrapper(_loggerWrapper!);
