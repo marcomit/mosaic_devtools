@@ -173,7 +173,9 @@ class _RouterInspectorViewState extends State<RouterInspectorView>
               decoration: BoxDecoration(
                 color: const Color(0xFF111111),
                 border: Border(
-                  bottom: BorderSide(color: Colors.white.withOpacity(0.05)),
+                  bottom: BorderSide(
+                    color: Colors.white.withValues(alpha: 0.05),
+                  ),
                 ),
               ),
               child: Row(
@@ -182,9 +184,11 @@ class _RouterInspectorViewState extends State<RouterInspectorView>
                   Container(
                     margin: const EdgeInsets.only(right: 16),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.03),
+                      color: Colors.white.withValues(alpha: 0.03),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.white.withOpacity(0.1)),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.1),
+                      ),
                     ),
                     child: Material(
                       color: Colors.transparent,
@@ -198,7 +202,7 @@ class _RouterInspectorViewState extends State<RouterInspectorView>
                           padding: const EdgeInsets.all(8),
                           child: Icon(
                             Icons.arrow_back_ios_new,
-                            color: Colors.white.withOpacity(0.7),
+                            color: Colors.white.withValues(alpha: 0.7),
                             size: 16,
                           ),
                         ),
@@ -212,11 +216,11 @@ class _RouterInspectorViewState extends State<RouterInspectorView>
                         width: 8,
                         height: 8,
                         decoration: BoxDecoration(
-                          color: Colors.purple.withOpacity(0.8),
+                          color: Colors.purple.withValues(alpha: 0.8),
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.purple.withOpacity(0.3),
+                              color: Colors.purple.withValues(alpha: 0.3),
                               blurRadius: 8,
                               spreadRadius: 2,
                             ),
@@ -256,7 +260,7 @@ class _RouterInspectorViewState extends State<RouterInspectorView>
                           Text(
                             'Auto-refresh',
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.6),
+                              color: Colors.white.withValues(alpha: 0.6),
                               fontSize: 13,
                             ),
                           ),
@@ -268,7 +272,7 @@ class _RouterInspectorViewState extends State<RouterInspectorView>
                                 _autoRefresh = value;
                               });
                             },
-                            activeColor: Colors.purple.withOpacity(0.8),
+                            activeColor: Colors.purple.withValues(alpha: 0.8),
                           ),
                         ],
                       ),
@@ -312,7 +316,7 @@ class _RouterInspectorViewState extends State<RouterInspectorView>
                       ),
                       border: Border(
                         right: BorderSide(
-                          color: Colors.white.withOpacity(0.05),
+                          color: Colors.white.withValues(alpha: 0.05),
                           width: 1,
                         ),
                       ),

@@ -54,7 +54,7 @@ class _LogContentState extends State<LogContent> {
       SnackBar(
         content: const Text('Log message copied to clipboard'),
         duration: const Duration(seconds: 2),
-        backgroundColor: Colors.green.withOpacity(0.8),
+        backgroundColor: Colors.green.withValues(alpha: 0.8),
       ),
     );
   }
@@ -75,7 +75,7 @@ Message: ${log.message}
       SnackBar(
         content: const Text('Full log entry copied to clipboard'),
         duration: const Duration(seconds: 2),
-        backgroundColor: Colors.blue.withOpacity(0.8),
+        backgroundColor: Colors.blue.withValues(alpha: 0.8),
       ),
     );
   }
@@ -108,7 +108,7 @@ Message: ${log.message}
 
         // Log details panel
         if (_selectedLog != null) ...[
-          Container(width: 1, color: Colors.white.withOpacity(0.05)),
+          Container(width: 1, color: Colors.white.withValues(alpha: 0.05)),
           Expanded(flex: 1, child: _buildLogDetails(_selectedLog!)),
         ],
       ],
@@ -123,13 +123,13 @@ Message: ${log.message}
           Icon(
             widget.isPaused ? Icons.pause_circle_outline : Icons.terminal,
             size: 48,
-            color: Colors.white.withOpacity(0.1),
+            color: Colors.white.withValues(alpha: 0.1),
           ),
           const SizedBox(height: 16),
           Text(
             widget.isPaused ? 'Logging paused' : 'No logs yet',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.3),
+              color: Colors.white.withValues(alpha: 0.3),
               fontSize: 16,
               fontWeight: FontWeight.w300,
             ),
@@ -140,7 +140,7 @@ Message: ${log.message}
                 ? 'Resume logging to continue capturing entries'
                 : 'Start an action to see logs appear here',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(alpha: 0.2),
               fontSize: 14,
             ),
           ),
@@ -162,7 +162,7 @@ Message: ${log.message}
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.white.withOpacity(0.05) : null,
+          color: isSelected ? Colors.white.withValues(alpha: 0.05) : null,
           borderRadius: BorderRadius.circular(6),
         ),
         child: Row(
@@ -172,7 +172,7 @@ Message: ${log.message}
             Text(
               '${log.timestamp.hour.toString().padLeft(2, '0')}:${log.timestamp.minute.toString().padLeft(2, '0')}',
               style: TextStyle(
-                color: Colors.white.withOpacity(0.4),
+                color: Colors.white.withValues(alpha: 0.4),
                 fontSize: 12,
               ),
             ),
@@ -192,7 +192,7 @@ Message: ${log.message}
 
   Widget _buildLogDetails(LogEntry log) {
     return Container(
-      color: Colors.black.withOpacity(0.2),
+      color: Colors.black.withValues(alpha: 0.2),
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -202,21 +202,21 @@ Message: ${log.message}
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Colors.white.withOpacity(0.9),
+              color: Colors.white.withValues(alpha: 0.9),
             ),
           ),
           const SizedBox(height: 12),
           SelectableText(
             "Time: ${log.preciseTime}",
-            style: TextStyle(color: Colors.white.withOpacity(0.8)),
+            style: TextStyle(color: Colors.white.withValues(alpha: 0.8)),
           ),
           SelectableText(
             "Level: ${log.levelText}",
-            style: TextStyle(color: Colors.white.withOpacity(0.8)),
+            style: TextStyle(color: Colors.white.withValues(alpha: 0.8)),
           ),
           SelectableText(
             "Tags: ${log.tags.join(', ')}",
-            style: TextStyle(color: Colors.white.withOpacity(0.8)),
+            style: TextStyle(color: Colors.white.withValues(alpha: 0.8)),
           ),
           const SizedBox(height: 8),
           SelectableText(
@@ -244,4 +244,3 @@ Message: ${log.message}
     );
   }
 }
-

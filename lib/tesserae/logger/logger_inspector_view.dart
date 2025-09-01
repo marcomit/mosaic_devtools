@@ -186,7 +186,7 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
                 ),
                 border: Border(
                   right: BorderSide(
-                    color: Colors.white.withOpacity(0.05),
+                    color: Colors.white.withValues(alpha: 0.05),
                     width: 1,
                   ),
                 ),
@@ -216,7 +216,7 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
                       color: const Color(0xFF111111),
                       border: Border(
                         bottom: BorderSide(
-                          color: Colors.white.withOpacity(0.05),
+                          color: Colors.white.withValues(alpha: 0.05),
                         ),
                       ),
                     ),
@@ -226,10 +226,10 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
                         Container(
                           margin: const EdgeInsets.only(right: 16),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.03),
+                            color: Colors.white.withValues(alpha: 0.03),
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
-                              color: Colors.white.withOpacity(0.1),
+                              color: Colors.white.withValues(alpha: 0.1),
                             ),
                           ),
                           child: Material(
@@ -244,7 +244,7 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
                                 padding: const EdgeInsets.all(8),
                                 child: Icon(
                                   Icons.arrow_back_ios_new,
-                                  color: Colors.white.withOpacity(0.7),
+                                  color: Colors.white.withValues(alpha: 0.7),
                                   size: 16,
                                 ),
                               ),
@@ -271,13 +271,13 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
                             vertical: 4,
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.05),
+                            color: Colors.white.withValues(alpha: 0.05),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(
                             '${filteredLogs.length} / ${_logs.length}',
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.6),
+                              color: Colors.white.withValues(alpha: 0.6),
                               fontSize: 12,
                             ),
                           ),
@@ -314,7 +314,7 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
                                 Text(
                                   'Auto-scroll',
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.6),
+                                    color: Colors.white.withValues(alpha: 0.6),
                                     fontSize: 13,
                                   ),
                                 ),
@@ -326,7 +326,9 @@ class _LoggerInspectorViewState extends State<LoggerInspectorView>
                                       _autoScroll = value;
                                     });
                                   },
-                                  activeColor: Colors.blue.withOpacity(0.8),
+                                  activeColor: Colors.blue.withValues(
+                                    alpha: 0.8,
+                                  ),
                                 ),
                               ],
                             ),

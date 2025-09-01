@@ -19,7 +19,7 @@ class RouteBreadcrumb extends StatelessWidget {
       return Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.05),
+          color: Colors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(
@@ -27,14 +27,14 @@ class RouteBreadcrumb extends StatelessWidget {
           children: [
             Icon(
               Icons.help_outline,
-              color: Colors.white.withOpacity(0.4),
+              color: Colors.white.withValues(alpha: 0.4),
               size: 16,
             ),
             const SizedBox(width: 8),
             Text(
               'No active route',
               style: TextStyle(
-                color: Colors.white.withOpacity(0.4),
+                color: Colors.white.withValues(alpha: 0.4),
                 fontSize: 12,
                 fontStyle: FontStyle.italic,
               ),
@@ -55,13 +55,17 @@ class RouteBreadcrumb extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.white.withOpacity(0.1)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
       ),
       child: Row(
         children: [
-          Icon(Icons.route, color: Colors.purple.withOpacity(0.8), size: 16),
+          Icon(
+            Icons.route,
+            color: Colors.purple.withValues(alpha: 0.8),
+            size: 16,
+          ),
           const SizedBox(width: 8),
           Expanded(
             child: SingleChildScrollView(
@@ -79,7 +83,7 @@ class RouteBreadcrumb extends StatelessWidget {
                         const SizedBox(width: 8),
                         Icon(
                           Icons.chevron_right,
-                          color: Colors.white.withOpacity(0.3),
+                          color: Colors.white.withValues(alpha: 0.3),
                           size: 16,
                         ),
                         const SizedBox(width: 8),
@@ -99,12 +103,14 @@ class RouteBreadcrumb extends StatelessWidget {
                             ),
                             decoration: BoxDecoration(
                               color: isCurrent
-                                  ? Colors.purple.withOpacity(0.2)
+                                  ? Colors.purple.withValues(alpha: 0.2)
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(4),
                               border: isCurrent
                                   ? Border.all(
-                                      color: Colors.purple.withOpacity(0.4),
+                                      color: Colors.purple.withValues(
+                                        alpha: 0.4,
+                                      ),
                                       width: 1,
                                     )
                                   : null,
@@ -115,8 +121,8 @@ class RouteBreadcrumb extends StatelessWidget {
                                 color: isCurrent
                                     ? Colors.purple.shade300
                                     : isLast
-                                    ? Colors.white.withOpacity(0.8)
-                                    : Colors.white.withOpacity(0.5),
+                                    ? Colors.white.withValues(alpha: 0.8)
+                                    : Colors.white.withValues(alpha: 0.5),
                                 fontSize: 12,
                                 fontWeight: isCurrent
                                     ? FontWeight.w600

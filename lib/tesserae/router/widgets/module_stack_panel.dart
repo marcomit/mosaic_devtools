@@ -30,7 +30,7 @@ class ModuleStackPanel extends StatelessWidget {
               Text(
                 'Module Stack',
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.9),
+                  color: Colors.white.withValues(alpha: 0.9),
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 0.3,
@@ -40,7 +40,7 @@ class ModuleStackPanel extends StatelessWidget {
               Text(
                 '${routeState.moduleStack.length} modules in stack',
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withValues(alpha: 0.5),
                   fontSize: 12,
                 ),
               ),
@@ -102,12 +102,15 @@ class ModuleStackPanel extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Colors.purple.withOpacity(0.2),
-            Colors.purple.withOpacity(0.1),
+            Colors.purple.withValues(alpha: 0.2),
+            Colors.purple.withValues(alpha: 0.1),
           ],
         ),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.purple.withOpacity(0.3), width: 1.5),
+        border: Border.all(
+          color: Colors.purple.withValues(alpha: 0.3),
+          width: 1.5,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,7 +120,7 @@ class ModuleStackPanel extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.purple.withOpacity(0.3),
+                  color: Colors.purple.withValues(alpha: 0.3),
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
@@ -133,7 +136,7 @@ class ModuleStackPanel extends StatelessWidget {
               const Spacer(),
               Icon(
                 Icons.radio_button_checked,
-                color: Colors.purple.withOpacity(0.8),
+                color: Colors.purple.withValues(alpha: 0.8),
                 size: 16,
               ),
             ],
@@ -151,7 +154,7 @@ class ModuleStackPanel extends StatelessWidget {
           Text(
             routeState.currentModule!,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.6),
+              color: Colors.white.withValues(alpha: 0.6),
               fontSize: 11,
               fontFamily: 'SF Mono',
             ),
@@ -189,13 +192,13 @@ class ModuleStackPanel extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: isSelected
-                ? Colors.white.withOpacity(0.08)
-                : Colors.white.withOpacity(0.02),
+                ? Colors.white.withValues(alpha: 0.08)
+                : Colors.white.withValues(alpha: 0.02),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isSelected
-                  ? Colors.white.withOpacity(0.2)
-                  : Colors.white.withOpacity(0.08),
+                  ? Colors.white.withValues(alpha: 0.2)
+                  : Colors.white.withValues(alpha: 0.08),
               width: 1,
             ),
           ),
@@ -208,7 +211,7 @@ class ModuleStackPanel extends StatelessWidget {
                     width: 24,
                     height: 24,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.1),
+                      color: Colors.white.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Center(
@@ -230,7 +233,7 @@ class ModuleStackPanel extends StatelessWidget {
                         Text(
                           _formatModuleName(moduleName),
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
@@ -238,7 +241,7 @@ class ModuleStackPanel extends StatelessWidget {
                         Text(
                           moduleName,
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.5),
+                            color: Colors.white.withValues(alpha: 0.5),
                             fontSize: 10,
                             fontFamily: 'SF Mono',
                           ),
@@ -251,7 +254,7 @@ class ModuleStackPanel extends StatelessWidget {
                       width: 6,
                       height: 6,
                       decoration: BoxDecoration(
-                        color: Colors.green.withOpacity(0.8),
+                        color: Colors.green.withValues(alpha: 0.8),
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -279,8 +282,8 @@ class ModuleStackPanel extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
         color: pageCount > 0
-            ? Colors.green.withOpacity(0.2)
-            : Colors.white.withOpacity(0.1),
+            ? Colors.green.withValues(alpha: 0.2)
+            : Colors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(
@@ -290,16 +293,16 @@ class ModuleStackPanel extends StatelessWidget {
             Icons.layers,
             size: 12,
             color: pageCount > 0
-                ? Colors.green.withOpacity(0.8)
-                : Colors.white.withOpacity(0.5),
+                ? Colors.green.withValues(alpha: 0.8)
+                : Colors.white.withValues(alpha: 0.5),
           ),
           const SizedBox(width: 4),
           Text(
             pageCount.toString(),
             style: TextStyle(
               color: pageCount > 0
-                  ? Colors.green.withOpacity(0.8)
-                  : Colors.white.withOpacity(0.5),
+                  ? Colors.green.withValues(alpha: 0.8)
+                  : Colors.white.withValues(alpha: 0.5),
               fontSize: 10,
               fontWeight: FontWeight.w600,
             ),
@@ -321,13 +324,13 @@ class ModuleStackPanel extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
-            color: Colors.blue.withOpacity(0.2),
+            color: Colors.blue.withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(6),
           ),
           child: Icon(
             Icons.launch,
             size: 12,
-            color: Colors.blue.withOpacity(0.8),
+            color: Colors.blue.withValues(alpha: 0.8),
           ),
         ),
       ),
@@ -348,8 +351,8 @@ class ModuleStackPanel extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.white.withOpacity(0.3),
-                  Colors.white.withOpacity(0.1),
+                  Colors.white.withValues(alpha: 0.3),
+                  Colors.white.withValues(alpha: 0.1),
                 ],
               ),
             ),
@@ -362,7 +365,10 @@ class ModuleStackPanel extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
-                  colors: [Colors.white.withOpacity(0.2), Colors.transparent],
+                  colors: [
+                    Colors.white.withValues(alpha: 0.2),
+                    Colors.transparent,
+                  ],
                 ),
               ),
             ),
@@ -379,14 +385,14 @@ class ModuleStackPanel extends StatelessWidget {
         children: [
           Icon(
             Icons.layers_clear,
-            color: Colors.white.withOpacity(0.3),
+            color: Colors.white.withValues(alpha: 0.3),
             size: 48,
           ),
           const SizedBox(height: 16),
           Text(
             'No modules in stack',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.5),
+              color: Colors.white.withValues(alpha: 0.5),
               fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
@@ -395,7 +401,7 @@ class ModuleStackPanel extends StatelessWidget {
           Text(
             'Navigate between modules to see the stack',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.3),
+              color: Colors.white.withValues(alpha: 0.3),
               fontSize: 12,
             ),
             textAlign: TextAlign.center,
@@ -418,7 +424,7 @@ class ModuleStackPanel extends StatelessWidget {
           child: Text(
             'Recent Transitions',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
@@ -430,9 +436,9 @@ class ModuleStackPanel extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 8),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.03),
+              color: Colors.white.withValues(alpha: 0.03),
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.white.withOpacity(0.05)),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -443,7 +449,7 @@ class ModuleStackPanel extends StatelessWidget {
                       child: Text(
                         route.transitionDescription,
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                         ),
@@ -452,7 +458,7 @@ class ModuleStackPanel extends StatelessWidget {
                     Text(
                       route.formattedTime,
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.4),
+                        color: Colors.white.withValues(alpha: 0.4),
                         fontSize: 10,
                         fontFamily: 'SF Mono',
                       ),
@@ -464,7 +470,7 @@ class ModuleStackPanel extends StatelessWidget {
                   Text(
                     'Params: ${route.params}',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.4),
+                      color: Colors.white.withValues(alpha: 0.4),
                       fontSize: 10,
                       fontFamily: 'SF Mono',
                     ),

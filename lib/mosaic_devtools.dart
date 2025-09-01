@@ -28,7 +28,7 @@ class MosaicDevtools extends StatefulWidget {
 
     final eventModule = EventModule();
     eventModule.dependencies.add(devtools);
-    await moduleManager.register(EventModule());
+    await moduleManager.register(eventModule);
 
     final loggerModule = LoggerInspectorModule();
     loggerModule.dependencies.add(devtools);
@@ -128,7 +128,7 @@ class _MosaicDevtoolsState extends State<MosaicDevtools>
               size: 22,
               color: _isDevtoolsOpen
                   ? Colors.orange
-                  : Colors.orange.withOpacity(0.7),
+                  : Colors.orange.withValues(alpha: 0.7),
             ),
           ),
         );

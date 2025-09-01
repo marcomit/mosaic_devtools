@@ -32,11 +32,11 @@ class ModuleSidebar extends StatelessWidget {
                     width: 8,
                     height: 8,
                     decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(0.8),
+                      color: Colors.blue.withValues(alpha: 0.8),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.blue.withOpacity(0.3),
+                          color: Colors.blue.withValues(alpha: 0.3),
                           blurRadius: 8,
                           spreadRadius: 2,
                         ),
@@ -61,7 +61,7 @@ class ModuleSidebar extends StatelessWidget {
                   Text(
                     '${modules.length} total',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white.withValues(alpha: 0.5),
                       fontSize: 13,
                     ),
                   ),
@@ -69,7 +69,7 @@ class ModuleSidebar extends StatelessWidget {
                   Text(
                     '$activeCount active',
                     style: TextStyle(
-                      color: Colors.green.withOpacity(0.7),
+                      color: Colors.green.withValues(alpha: 0.7),
                       fontSize: 13,
                     ),
                   ),
@@ -92,13 +92,13 @@ class ModuleSidebar extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 8),
                 decoration: BoxDecoration(
                   color: isSelected
-                      ? Colors.white.withOpacity(0.08)
-                      : Colors.white.withOpacity(0.02),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : Colors.white.withValues(alpha: 0.02),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: isSelected
-                        ? Colors.blue.withOpacity(0.3)
-                        : Colors.white.withOpacity(0.05),
+                        ? Colors.blue.withValues(alpha: 0.3)
+                        : Colors.white.withValues(alpha: 0.05),
                     width: isSelected ? 1.5 : 1,
                   ),
                 ),
@@ -171,13 +171,7 @@ class ModuleSidebar extends StatelessWidget {
   Widget _buildStatusIndicator(ModuleInfo moduleInfo) {
     return Stack(
       children: [
-        Container(
-          child: Icon(
-            moduleInfo.stateIcon,
-            color: moduleInfo.stateColor,
-            size: 20,
-          ),
-        ),
+        Icon(moduleInfo.stateIcon, color: moduleInfo.stateColor, size: 20),
         if (moduleInfo.isCurrent)
           Positioned(
             right: -2,
@@ -186,11 +180,11 @@ class ModuleSidebar extends StatelessWidget {
               width: 8,
               height: 8,
               decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.9),
+                color: Colors.blue.withValues(alpha: 0.9),
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.blue.withOpacity(0.5),
+                    color: Colors.blue.withValues(alpha: 0.5),
                     blurRadius: 4,
                     spreadRadius: 1,
                   ),
@@ -206,7 +200,7 @@ class ModuleSidebar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.2),
+        color: color.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(4),
       ),
       child: Text(

@@ -147,25 +147,25 @@ class _InspectorCardState extends State<InspectorCard>
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Colors.white.withOpacity(
-                        0.03 + (_hoverAnimation.value * 0.02),
+                      Colors.white.withValues(
+                        alpha: 0.03 + (_hoverAnimation.value * 0.02),
                       ),
-                      Colors.white.withOpacity(
-                        0.01 + (_hoverAnimation.value * 0.02),
+                      Colors.white.withValues(
+                        alpha: 0.01 + (_hoverAnimation.value * 0.02),
                       ),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
                     color: _isHovering
-                        ? accentColor.withOpacity(0.3)
-                        : Colors.white.withOpacity(0.08),
+                        ? accentColor.withValues(alpha: 0.3)
+                        : Colors.white.withValues(alpha: 0.08),
                     width: _isHovering ? 1.5 : 1,
                   ),
                   boxShadow: _isHovering
                       ? [
                           BoxShadow(
-                            color: accentColor.withOpacity(0.1),
+                            color: accentColor.withValues(alpha: 0.1),
                             blurRadius: 20,
                             spreadRadius: 0,
                             offset: const Offset(0, 6),
@@ -188,14 +188,14 @@ class _InspectorCardState extends State<InspectorCard>
                             decoration: BoxDecoration(
                               gradient: RadialGradient(
                                 colors: [
-                                  accentColor.withOpacity(0.8),
-                                  accentColor.withOpacity(0.4),
+                                  accentColor.withValues(alpha: 0.8),
+                                  accentColor.withValues(alpha: 0.4),
                                 ],
                               ),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: accentColor.withOpacity(0.3),
+                                  color: accentColor.withValues(alpha: 0.3),
                                   blurRadius: 8,
                                   spreadRadius: 0,
                                 ),
@@ -209,8 +209,8 @@ class _InspectorCardState extends State<InspectorCard>
                             duration: const Duration(milliseconds: 200),
                             child: Icon(
                               Icons.arrow_forward_ios,
-                              color: Colors.white.withOpacity(
-                                0.3 + (_hoverAnimation.value * 0.4),
+                              color: Colors.white.withValues(
+                                alpha: 0.3 + (_hoverAnimation.value * 0.4),
                               ),
                               size: 14,
                             ),
@@ -224,8 +224,8 @@ class _InspectorCardState extends State<InspectorCard>
                       Text(
                         _displayName,
                         style: TextStyle(
-                          color: Colors.white.withOpacity(
-                            0.9 + (_hoverAnimation.value * 0.1),
+                          color: Colors.white.withValues(
+                            alpha: 0.9 + (_hoverAnimation.value * 0.1),
                           ),
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
@@ -239,8 +239,8 @@ class _InspectorCardState extends State<InspectorCard>
                       Text(
                         widget.description ?? _getDefaultDescription(),
                         style: TextStyle(
-                          color: Colors.white.withOpacity(
-                            0.5 + (_hoverAnimation.value * 0.2),
+                          color: Colors.white.withValues(
+                            alpha: 0.5 + (_hoverAnimation.value * 0.2),
                           ),
                           fontSize: 12,
                           height: 1.3,
@@ -262,7 +262,9 @@ class _InspectorCardState extends State<InspectorCard>
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color: _getStatusColor().withOpacity(0.5),
+                                  color: _getStatusColor().withValues(
+                                    alpha: 0.5,
+                                  ),
                                   blurRadius: 3,
                                   spreadRadius: 1,
                                 ),
@@ -273,7 +275,7 @@ class _InspectorCardState extends State<InspectorCard>
                           Text(
                             _getStatusText(),
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.6),
+                              color: Colors.white.withValues(alpha: 0.6),
                               fontSize: 10,
                               fontWeight: FontWeight.w500,
                             ),
@@ -294,8 +296,9 @@ class _InspectorCardState extends State<InspectorCard>
   String _getDefaultDescription() {
     final name = widget.name.toLowerCase();
     if (name.contains('event')) return 'Monitor event flow across modules';
-    if (name.contains('module'))
+    if (name.contains('module')) {
       return 'Inspect module lifecycle & dependencies';
+    }
     if (name.contains('log')) return 'View and filter application logs';
     if (name.contains('network')) return 'Monitor network requests & responses';
     if (name.contains('storage')) return 'Inspect local storage & databases';

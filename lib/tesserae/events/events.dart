@@ -156,7 +156,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                 ),
                 border: Border(
                   right: BorderSide(
-                    color: Colors.white.withOpacity(0.05),
+                    color: Colors.white.withValues(alpha: 0.05),
                     width: 1,
                   ),
                 ),
@@ -175,11 +175,11 @@ class _EventInspectorViewState extends State<EventInspectorView>
                               width: 8,
                               height: 8,
                               decoration: BoxDecoration(
-                                color: Colors.green.withOpacity(0.8),
+                                color: Colors.green.withValues(alpha: 0.8),
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.green.withOpacity(0.3),
+                                    color: Colors.green.withValues(alpha: 0.3),
                                     blurRadius: 8,
                                     spreadRadius: 2,
                                   ),
@@ -203,10 +203,10 @@ class _EventInspectorViewState extends State<EventInspectorView>
                         // Subscribe input
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.03),
+                            color: Colors.white.withValues(alpha: 0.03),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                              color: Colors.white.withOpacity(0.1),
+                              color: Colors.white.withValues(alpha: 0.1),
                             ),
                           ),
                           child: TextField(
@@ -219,7 +219,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                             decoration: InputDecoration(
                               hintText: 'Channel pattern (e.g., user/*)',
                               hintStyle: TextStyle(
-                                color: Colors.white.withOpacity(0.3),
+                                color: Colors.white.withValues(alpha: 0.3),
                                 fontSize: 13,
                               ),
                               border: InputBorder.none,
@@ -231,7 +231,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                 },
                                 icon: Icon(
                                   Icons.add_circle_outline,
-                                  color: Colors.white.withOpacity(0.6),
+                                  color: Colors.white.withValues(alpha: 0.6),
                                   size: 20,
                                 ),
                               ),
@@ -255,7 +255,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                           Text(
                             'Active Subscriptions',
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.5),
+                              color: Colors.white.withValues(alpha: 0.5),
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               letterSpacing: 1,
@@ -265,7 +265,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                           Text(
                             '${_activeSubscriptions.length}',
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.3),
+                              color: Colors.white.withValues(alpha: 0.3),
                               fontSize: 12,
                             ),
                           ),
@@ -285,10 +285,10 @@ class _EventInspectorViewState extends State<EventInspectorView>
                           return Container(
                             margin: const EdgeInsets.only(bottom: 8),
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.02),
+                              color: Colors.white.withValues(alpha: 0.02),
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(
-                                color: Colors.white.withOpacity(0.05),
+                                color: Colors.white.withValues(alpha: 0.05),
                               ),
                             ),
                             child: ListTile(
@@ -310,7 +310,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                 icon: Icon(
                                   Icons.close,
                                   size: 16,
-                                  color: Colors.white.withOpacity(0.4),
+                                  color: Colors.white.withValues(alpha: 0.4),
                                 ),
                               ),
                               onTap: () {
@@ -331,7 +331,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                       child: Text(
                         'Discovered Channels',
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.5),
+                          color: Colors.white.withValues(alpha: 0.5),
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                           letterSpacing: 1,
@@ -375,8 +375,8 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                           : Icons.radio_button_unchecked,
                                       size: 14,
                                       color: isSubscribed
-                                          ? Colors.blue.withOpacity(0.8)
-                                          : Colors.white.withOpacity(0.3),
+                                          ? Colors.blue.withValues(alpha: 0.8)
+                                          : Colors.white.withValues(alpha: 0.3),
                                     ),
                                     const SizedBox(width: 8),
                                     Expanded(
@@ -385,7 +385,9 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                         style: TextStyle(
                                           color: isSubscribed
                                               ? Colors.white70
-                                              : Colors.white.withOpacity(0.4),
+                                              : Colors.white.withValues(
+                                                  alpha: 0.4,
+                                                ),
                                           fontSize: 12,
                                           fontFamily: 'SF Mono',
                                         ),
@@ -419,7 +421,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                       color: const Color(0xFF111111),
                       border: Border(
                         bottom: BorderSide(
-                          color: Colors.white.withOpacity(0.05),
+                          color: Colors.white.withValues(alpha: 0.05),
                         ),
                       ),
                     ),
@@ -429,10 +431,10 @@ class _EventInspectorViewState extends State<EventInspectorView>
                         Container(
                           margin: const EdgeInsets.only(right: 16),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.03),
+                            color: Colors.white.withValues(alpha: 0.03),
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
-                              color: Colors.white.withOpacity(0.1),
+                              color: Colors.white.withValues(alpha: 0.1),
                             ),
                           ),
                           child: Material(
@@ -447,7 +449,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                 padding: const EdgeInsets.all(8),
                                 child: Icon(
                                   Icons.arrow_back_ios_new,
-                                  color: Colors.white.withOpacity(0.7),
+                                  color: Colors.white.withValues(alpha: 0.7),
                                   size: 16,
                                 ),
                               ),
@@ -472,7 +474,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                             Text(
                               'Auto-scroll',
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.6),
+                                color: Colors.white.withValues(alpha: 0.6),
                                 fontSize: 13,
                               ),
                             ),
@@ -484,7 +486,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                   _autoScroll = value;
                                 });
                               },
-                              activeColor: Colors.blue.withOpacity(0.8),
+                              activeColor: Colors.blue.withValues(alpha: 0.8),
                             ),
                           ],
                         ),
@@ -523,13 +525,13 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                 Icon(
                                   Icons.handshake,
                                   size: 48,
-                                  color: Colors.white.withOpacity(0.1),
+                                  color: Colors.white.withValues(alpha: 0.1),
                                 ),
                                 const SizedBox(height: 16),
                                 Text(
                                   'Waiting for events...',
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.3),
+                                    color: Colors.white.withValues(alpha: 0.3),
                                     fontSize: 16,
                                     fontWeight: FontWeight.w300,
                                   ),
@@ -538,7 +540,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                 Text(
                                   'Subscribe to channels to see messages here',
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.2),
+                                    color: Colors.white.withValues(alpha: 0.2),
                                     fontSize: 13,
                                   ),
                                 ),
@@ -558,10 +560,10 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                 margin: const EdgeInsets.only(bottom: 12),
                                 padding: const EdgeInsets.all(20),
                                 decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.02),
+                                  color: Colors.white.withValues(alpha: 0.02),
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: Colors.white.withOpacity(0.05),
+                                    color: Colors.white.withValues(alpha: 0.05),
                                   ),
                                 ),
                                 child: Column(
@@ -575,13 +577,15 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                             vertical: 4,
                                           ),
                                           decoration: BoxDecoration(
-                                            color: Colors.blue.withOpacity(0.1),
+                                            color: Colors.blue.withValues(
+                                              alpha: 0.1,
+                                            ),
                                             borderRadius: BorderRadius.circular(
                                               6,
                                             ),
                                             border: Border.all(
-                                              color: Colors.blue.withOpacity(
-                                                0.3,
+                                              color: Colors.blue.withValues(
+                                                alpha: 0.3,
                                               ),
                                             ),
                                           ),
@@ -603,8 +607,8 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                               vertical: 2,
                                             ),
                                             decoration: BoxDecoration(
-                                              color: Colors.amber.withOpacity(
-                                                0.2,
+                                              color: Colors.amber.withValues(
+                                                alpha: 0.2,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(4),
@@ -625,8 +629,8 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                           '${message.timestamp.minute.toString().padLeft(2, '0')}:'
                                           '${message.timestamp.second.toString().padLeft(2, '0')}',
                                           style: TextStyle(
-                                            color: Colors.white.withOpacity(
-                                              0.4,
+                                            color: Colors.white.withValues(
+                                              alpha: 0.4,
                                             ),
                                             fontSize: 12,
                                             fontFamily: 'SF Mono',
@@ -657,7 +661,9 @@ class _EventInspectorViewState extends State<EventInspectorView>
                     decoration: BoxDecoration(
                       color: const Color(0xFF111111),
                       border: Border(
-                        top: BorderSide(color: Colors.white.withOpacity(0.05)),
+                        top: BorderSide(
+                          color: Colors.white.withValues(alpha: 0.05),
+                        ),
                       ),
                     ),
                     child: Row(
@@ -666,10 +672,10 @@ class _EventInspectorViewState extends State<EventInspectorView>
                           flex: 2,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.03),
+                              color: Colors.white.withValues(alpha: 0.03),
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                color: Colors.white.withOpacity(0.1),
+                                color: Colors.white.withValues(alpha: 0.1),
                               ),
                             ),
                             child: TextField(
@@ -682,7 +688,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                               decoration: InputDecoration(
                                 hintText: 'Channel',
                                 hintStyle: TextStyle(
-                                  color: Colors.white.withOpacity(0.3),
+                                  color: Colors.white.withValues(alpha: 0.3),
                                 ),
                                 border: InputBorder.none,
                                 contentPadding: const EdgeInsets.all(16),
@@ -695,10 +701,10 @@ class _EventInspectorViewState extends State<EventInspectorView>
                           flex: 3,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.03),
+                              color: Colors.white.withValues(alpha: 0.03),
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                color: Colors.white.withOpacity(0.1),
+                                color: Colors.white.withValues(alpha: 0.1),
                               ),
                             ),
                             child: TextField(
@@ -711,7 +717,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                               decoration: InputDecoration(
                                 hintText: 'Payload',
                                 hintStyle: TextStyle(
-                                  color: Colors.white.withOpacity(0.3),
+                                  color: Colors.white.withValues(alpha: 0.3),
                                 ),
                                 border: InputBorder.none,
                                 contentPadding: const EdgeInsets.all(16),
@@ -728,7 +734,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                             Text(
                               'Retained',
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.6),
+                                color: Colors.white.withValues(alpha: 0.6),
                                 fontSize: 13,
                               ),
                             ),
@@ -740,7 +746,7 @@ class _EventInspectorViewState extends State<EventInspectorView>
                                   _isRetained = value;
                                 });
                               },
-                              activeColor: Colors.amber.withOpacity(0.8),
+                              activeColor: Colors.amber.withValues(alpha: 0.8),
                             ),
                           ],
                         ),
@@ -752,8 +758,8 @@ class _EventInspectorViewState extends State<EventInspectorView>
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                Colors.blue.withOpacity(0.8),
-                                Colors.blue.withOpacity(0.6),
+                                Colors.blue.withValues(alpha: 0.8),
+                                Colors.blue.withValues(alpha: 0.6),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(12),

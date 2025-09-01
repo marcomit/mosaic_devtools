@@ -30,7 +30,7 @@ class PageStackPanel extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             border: Border(
-              bottom: BorderSide(color: Colors.white.withOpacity(0.05)),
+              bottom: BorderSide(color: Colors.white.withValues(alpha: 0.05)),
             ),
           ),
           child: Row(
@@ -43,7 +43,7 @@ class PageStackPanel extends StatelessWidget {
                       Text(
                         'Page Stack',
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha: 0.9),
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 0.3,
@@ -57,7 +57,7 @@ class PageStackPanel extends StatelessWidget {
                             vertical: 4,
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.purple.withOpacity(0.2),
+                            color: Colors.purple.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(
@@ -78,7 +78,7 @@ class PageStackPanel extends StatelessWidget {
                         ? '${currentStack.length} pages in stack'
                         : 'Select a module to view its page stack',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white.withValues(alpha: 0.5),
                       fontSize: 12,
                     ),
                   ),
@@ -141,19 +141,19 @@ class PageStackPanel extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: color.withOpacity(0.3)),
+            border: Border.all(color: color.withValues(alpha: 0.3)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(icon, size: 14, color: color.withOpacity(0.8)),
+              Icon(icon, size: 14, color: color.withValues(alpha: 0.8)),
               const SizedBox(width: 6),
               Text(
                 label,
                 style: TextStyle(
-                  color: color.withOpacity(0.8),
+                  color: color.withValues(alpha: 0.8),
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -173,22 +173,22 @@ class PageStackPanel extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.03),
+              color: Colors.white.withValues(alpha: 0.03),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.white.withOpacity(0.1)),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
             ),
             child: Column(
               children: [
                 Icon(
                   Icons.touch_app,
-                  color: Colors.white.withOpacity(0.4),
+                  color: Colors.white.withValues(alpha: 0.4),
                   size: 48,
                 ),
                 const SizedBox(height: 16),
                 Text(
                   'Select a Module',
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
@@ -197,7 +197,7 @@ class PageStackPanel extends StatelessWidget {
                 Text(
                   'Choose a module from the left panel\nto inspect its page stack',
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.4),
+                    color: Colors.white.withValues(alpha: 0.4),
                     fontSize: 13,
                   ),
                   textAlign: TextAlign.center,
@@ -218,22 +218,22 @@ class PageStackPanel extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.03),
+              color: Colors.white.withValues(alpha: 0.03),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.white.withOpacity(0.1)),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
             ),
             child: Column(
               children: [
                 Icon(
                   Icons.layers_clear,
-                  color: Colors.white.withOpacity(0.4),
+                  color: Colors.white.withValues(alpha: 0.4),
                   size: 48,
                 ),
                 const SizedBox(height: 16),
                 Text(
                   'No Pages in Stack',
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
@@ -242,7 +242,7 @@ class PageStackPanel extends StatelessWidget {
                 Text(
                   'This module has no pages pushed\nonto its internal navigation stack',
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.4),
+                    color: Colors.white.withValues(alpha: 0.4),
                     fontSize: 13,
                   ),
                   textAlign: TextAlign.center,
@@ -291,23 +291,23 @@ class PageStackPanel extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Colors.blue.withOpacity(0.15),
-                  Colors.blue.withOpacity(0.05),
+                  Colors.blue.withValues(alpha: 0.15),
+                  Colors.blue.withValues(alpha: 0.05),
                 ],
               )
             : LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Colors.white.withOpacity(0.08),
-                  Colors.white.withOpacity(0.02),
+                  Colors.white.withValues(alpha: 0.08),
+                  Colors.white.withValues(alpha: 0.02),
                 ],
               ),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: isTop
-              ? Colors.blue.withOpacity(0.3)
-              : Colors.white.withOpacity(0.1),
+              ? Colors.blue.withValues(alpha: 0.3)
+              : Colors.white.withValues(alpha: 0.1),
           width: isTop ? 1.5 : 1,
         ),
       ),
@@ -322,8 +322,8 @@ class PageStackPanel extends StatelessWidget {
                 height: 32,
                 decoration: BoxDecoration(
                   color: isTop
-                      ? Colors.blue.withOpacity(0.2)
-                      : Colors.white.withOpacity(0.1),
+                      ? Colors.blue.withValues(alpha: 0.2)
+                      : Colors.white.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -331,8 +331,8 @@ class PageStackPanel extends StatelessWidget {
                     stackIndex.toString(),
                     style: TextStyle(
                       color: isTop
-                          ? Colors.blue.withOpacity(0.9)
-                          : Colors.white.withOpacity(0.7),
+                          ? Colors.blue.withValues(alpha: 0.9)
+                          : Colors.white.withValues(alpha: 0.7),
                       fontSize: 14,
                       fontWeight: FontWeight.w700,
                     ),
@@ -350,7 +350,7 @@ class PageStackPanel extends StatelessWidget {
                           child: Text(
                             _formatPageType(pageType),
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.9),
+                              color: Colors.white.withValues(alpha: 0.9),
                               fontSize: 15,
                               fontWeight: FontWeight.w600,
                             ),
@@ -363,7 +363,7 @@ class PageStackPanel extends StatelessWidget {
                               vertical: 2,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.blue.withOpacity(0.3),
+                              color: Colors.blue.withValues(alpha: 0.3),
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Text(
@@ -382,7 +382,7 @@ class PageStackPanel extends StatelessWidget {
                     Text(
                       pageType,
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white.withValues(alpha: 0.5),
                         fontSize: 11,
                         fontFamily: 'SF Mono',
                       ),
@@ -399,7 +399,7 @@ class PageStackPanel extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.05),
+                color: Colors.white.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Row(
@@ -407,14 +407,14 @@ class PageStackPanel extends StatelessWidget {
                   Icon(
                     Icons.key,
                     size: 12,
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                   ),
                   const SizedBox(width: 6),
                   Expanded(
                     child: Text(
                       key,
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.7),
+                        color: Colors.white.withValues(alpha: 0.7),
                         fontSize: 10,
                         fontFamily: 'SF Mono',
                       ),
@@ -457,7 +457,7 @@ class PageStackPanel extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.03),
+          color: Colors.white.withValues(alpha: 0.03),
           borderRadius: BorderRadius.circular(6),
         ),
         child: Column(
@@ -465,12 +465,16 @@ class PageStackPanel extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(icon, size: 12, color: Colors.white.withOpacity(0.5)),
+                Icon(
+                  icon,
+                  size: 12,
+                  color: Colors.white.withValues(alpha: 0.5),
+                ),
                 const SizedBox(width: 4),
                 Text(
                   label,
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                     fontSize: 9,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 0.5,
@@ -482,7 +486,7 @@ class PageStackPanel extends StatelessWidget {
             Text(
               value,
               style: TextStyle(
-                color: Colors.white.withOpacity(0.8),
+                color: Colors.white.withValues(alpha: 0.8),
                 fontSize: 10,
                 fontFamily: 'SF Mono',
               ),
@@ -509,8 +513,8 @@ class PageStackPanel extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.white.withOpacity(0.3),
-                  Colors.white.withOpacity(0.1),
+                  Colors.white.withValues(alpha: 0.3),
+                  Colors.white.withValues(alpha: 0.1),
                 ],
               ),
             ),
@@ -523,7 +527,10 @@ class PageStackPanel extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
-                  colors: [Colors.white.withOpacity(0.2), Colors.transparent],
+                  colors: [
+                    Colors.white.withValues(alpha: 0.2),
+                    Colors.transparent,
+                  ],
                 ),
               ),
             ),

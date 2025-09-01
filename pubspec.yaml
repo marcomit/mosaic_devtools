@@ -1,7 +1,8 @@
 name: mosaic_devtools
-description: "A new Flutter package project."
+description: "The official development toolkit for Mosaic."
 version: 0.0.1
-homepage:
+homepage: https://github.com/marcomit
+repository: https://github.com/marcomit/mosaic_devtools
 
 environment:
   sdk: ^3.8.1

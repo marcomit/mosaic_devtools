@@ -36,9 +36,9 @@ class ModuleDetails extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.02),
+        color: Colors.white.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +64,7 @@ class ModuleDetails extends StatelessWidget {
                     Text(
                       'Full Screen: ${moduleInfo.isFullScreen ? 'Enabled' : 'Disabled'}',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white.withValues(alpha: 0.5),
                         fontSize: 13,
                       ),
                     ),
@@ -80,9 +80,9 @@ class ModuleDetails extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.red.withOpacity(0.1),
+                color: Colors.red.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.red.withOpacity(0.3)),
+                border: Border.all(color: Colors.red.withValues(alpha: 0.3)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,13 +127,8 @@ class ModuleDetails extends StatelessWidget {
   Widget _buildStatusIndicator() {
     return Stack(
       children: [
-        Container(
-          child: Icon(
-            moduleInfo.stateIcon,
-            color: moduleInfo.stateColor,
-            size: 24,
-          ),
-        ),
+        Icon(moduleInfo.stateIcon, color: moduleInfo.stateColor, size: 24),
+
         if (moduleInfo.isCurrent)
           Positioned(
             right: -2,
@@ -142,11 +137,11 @@ class ModuleDetails extends StatelessWidget {
               width: 10,
               height: 10,
               decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.9),
+                color: Colors.blue.withValues(alpha: 0.9),
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.blue.withOpacity(0.5),
+                    color: Colors.blue.withValues(alpha: 0.5),
                     blurRadius: 4,
                     spreadRadius: 1,
                   ),
@@ -185,9 +180,9 @@ class ModuleDetails extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.03),
+            color: Colors.white.withValues(alpha: 0.03),
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.white.withOpacity(0.08)),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -196,7 +191,7 @@ class ModuleDetails extends StatelessWidget {
               Text(
                 item.label,
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withValues(alpha: 0.5),
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
                 ),
@@ -222,9 +217,9 @@ class ModuleDetails extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.02),
+        color: Colors.white.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -233,7 +228,7 @@ class ModuleDetails extends StatelessWidget {
             children: [
               Icon(
                 Icons.layers_outlined,
-                color: Colors.purple.withOpacity(0.8),
+                color: Colors.purple.withValues(alpha: 0.8),
                 size: 20,
               ),
               const SizedBox(width: 12),
@@ -249,7 +244,7 @@ class ModuleDetails extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.purple.withOpacity(0.2),
+                  color: Colors.purple.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
@@ -271,9 +266,11 @@ class ModuleDetails extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 8),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.03),
+                  color: Colors.white.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white.withOpacity(0.08)),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.08),
+                  ),
                 ),
                 child: Row(
                   children: [
@@ -281,7 +278,7 @@ class ModuleDetails extends StatelessWidget {
                       width: 24,
                       height: 24,
                       decoration: BoxDecoration(
-                        color: Colors.purple.withOpacity(0.8),
+                        color: Colors.purple.withValues(alpha: 0.8),
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Center(
@@ -316,7 +313,7 @@ class ModuleDetails extends StatelessWidget {
               child: Text(
                 'No pages in stack',
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withValues(alpha: 0.3),
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
                 ),
@@ -332,9 +329,9 @@ class ModuleDetails extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.02),
+        color: Colors.white.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -343,7 +340,7 @@ class ModuleDetails extends StatelessWidget {
             children: [
               Icon(
                 Icons.memory,
-                color: Colors.orange.withOpacity(0.8),
+                color: Colors.orange.withValues(alpha: 0.8),
                 size: 20,
               ),
               const SizedBox(width: 12),
@@ -359,7 +356,7 @@ class ModuleDetails extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.orange.withOpacity(0.2),
+                  color: Colors.orange.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
@@ -380,15 +377,17 @@ class ModuleDetails extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 8),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.03),
+                  color: Colors.white.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white.withOpacity(0.08)),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.08),
+                  ),
                 ),
                 child: Row(
                   children: [
                     Icon(
                       Icons.extension,
-                      color: Colors.orange.withOpacity(0.8),
+                      color: Colors.orange.withValues(alpha: 0.8),
                       size: 16,
                     ),
                     const SizedBox(width: 12),
@@ -412,7 +411,7 @@ class ModuleDetails extends StatelessWidget {
               child: Text(
                 'No dependencies registered',
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withValues(alpha: 0.3),
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
                 ),
@@ -428,9 +427,9 @@ class ModuleDetails extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.02),
+        color: Colors.white.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -439,7 +438,7 @@ class ModuleDetails extends StatelessWidget {
             children: [
               Icon(
                 Icons.settings,
-                color: Colors.blue.withOpacity(0.8),
+                color: Colors.blue.withValues(alpha: 0.8),
                 size: 20,
               ),
               const SizedBox(width: 12),
@@ -508,7 +507,7 @@ class ModuleDetails extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [color.withOpacity(0.8), color.withOpacity(0.6)],
+          colors: [color.withValues(alpha: 0.8), color.withValues(alpha: 0.6)],
         ),
         borderRadius: BorderRadius.circular(8),
       ),

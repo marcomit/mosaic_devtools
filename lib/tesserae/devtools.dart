@@ -66,7 +66,7 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
                 ),
                 border: Border(
                   bottom: BorderSide(
-                    color: Colors.white.withOpacity(0.05),
+                    color: Colors.white.withValues(alpha: 0.05),
                     width: 1,
                   ),
                 ),
@@ -76,9 +76,11 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
                   Container(
                     margin: const EdgeInsets.only(right: 16),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.03),
+                      color: Colors.white.withValues(alpha: 0.03),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.white.withOpacity(0.1)),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.1),
+                      ),
                     ),
                     child: Material(
                       color: Colors.transparent,
@@ -92,7 +94,7 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
                           padding: const EdgeInsets.all(8),
                           child: Icon(
                             Icons.arrow_back_ios_new,
-                            color: Colors.white.withOpacity(0.7),
+                            color: Colors.white.withValues(alpha: 0.7),
                             size: 16,
                           ),
                         ),
@@ -105,14 +107,14 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
                     decoration: BoxDecoration(
                       gradient: RadialGradient(
                         colors: [
-                          Colors.cyan.withOpacity(0.8),
-                          Colors.blue.withOpacity(0.6),
+                          Colors.cyan.withValues(alpha: 0.8),
+                          Colors.blue.withValues(alpha: 0.6),
                         ],
                       ),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.cyan.withOpacity(0.4),
+                          color: Colors.cyan.withValues(alpha: 0.4),
                           blurRadius: 12,
                           spreadRadius: 3,
                         ),
@@ -136,9 +138,11 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
                       vertical: 6,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.05),
+                      color: Colors.white.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.white.withOpacity(0.1)),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.1),
+                      ),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -147,7 +151,7 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
                           width: 6,
                           height: 6,
                           decoration: BoxDecoration(
-                            color: Colors.green.withOpacity(0.8),
+                            color: Colors.green.withValues(alpha: 0.8),
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -155,7 +159,7 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
                         Text(
                           '${extensions.length} inspectors',
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.7),
+                            color: Colors.white.withValues(alpha: 0.7),
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                           ),
@@ -190,8 +194,8 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
             decoration: BoxDecoration(
               gradient: RadialGradient(
                 colors: [
-                  Colors.white.withOpacity(0.1),
-                  Colors.white.withOpacity(0.03),
+                  Colors.white.withValues(alpha: 0.1),
+                  Colors.white.withValues(alpha: 0.03),
                 ],
               ),
               shape: BoxShape.circle,
@@ -199,14 +203,14 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
             child: Icon(
               Icons.developer_mode,
               size: 40,
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(alpha: 0.2),
             ),
           ),
           const SizedBox(height: 24),
           Text(
             'No inspectors available',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.4),
+              color: Colors.white.withValues(alpha: 0.4),
               fontSize: 18,
               fontWeight: FontWeight.w300,
             ),
@@ -215,7 +219,7 @@ class _DevToolsDashboardState extends ModularState<DevToolsDashboard>
           Text(
             'Inspector modules will appear here when loaded',
             style: TextStyle(
-              color: Colors.white.withOpacity(0.25),
+              color: Colors.white.withValues(alpha: 0.25),
               fontSize: 14,
             ),
           ),

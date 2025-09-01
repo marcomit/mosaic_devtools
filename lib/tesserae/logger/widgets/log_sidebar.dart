@@ -108,11 +108,11 @@ class _LogSidebarState extends State<LogSidebar> {
                     width: 8,
                     height: 8,
                     decoration: BoxDecoration(
-                      color: Colors.amber.withOpacity(0.8),
+                      color: Colors.amber.withValues(alpha: 0.8),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.amber.withOpacity(0.3),
+                          color: Colors.amber.withValues(alpha: 0.3),
                           blurRadius: 8,
                           spreadRadius: 2,
                         ),
@@ -136,9 +136,11 @@ class _LogSidebarState extends State<LogSidebar> {
               // Search input
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.03),
+                  color: Colors.white.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white.withOpacity(0.1)),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.1),
+                  ),
                 ),
                 child: TextField(
                   controller: _searchController,
@@ -150,14 +152,14 @@ class _LogSidebarState extends State<LogSidebar> {
                   decoration: InputDecoration(
                     hintText: 'Search logs...',
                     hintStyle: TextStyle(
-                      color: Colors.white.withOpacity(0.3),
+                      color: Colors.white.withValues(alpha: 0.3),
                       fontSize: 13,
                     ),
                     border: InputBorder.none,
                     contentPadding: const EdgeInsets.all(16),
                     prefixIcon: Icon(
                       Icons.search,
-                      color: Colors.white.withOpacity(0.4),
+                      color: Colors.white.withValues(alpha: 0.4),
                       size: 20,
                     ),
                     suffixIcon: widget.searchQuery.isNotEmpty
@@ -168,7 +170,7 @@ class _LogSidebarState extends State<LogSidebar> {
                             },
                             icon: Icon(
                               Icons.clear,
-                              color: Colors.white.withOpacity(0.4),
+                              color: Colors.white.withValues(alpha: 0.4),
                               size: 16,
                             ),
                           )
@@ -192,7 +194,7 @@ class _LogSidebarState extends State<LogSidebar> {
                   Text(
                     'Dispatchers',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white.withValues(alpha: 0.5),
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       letterSpacing: 1,
@@ -202,7 +204,7 @@ class _LogSidebarState extends State<LogSidebar> {
                   Text(
                     '${dispatchers.values.where((active) => active).length}/${dispatchers.length}',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.3),
+                      color: Colors.white.withValues(alpha: 0.3),
                       fontSize: 12,
                     ),
                   ),
@@ -219,13 +221,13 @@ class _LogSidebarState extends State<LogSidebar> {
                   margin: const EdgeInsets.only(bottom: 8),
                   decoration: BoxDecoration(
                     color: isActive
-                        ? color.withOpacity(0.1)
-                        : Colors.white.withOpacity(0.02),
+                        ? color.withValues(alpha: 0.1)
+                        : Colors.white.withValues(alpha: 0.02),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: isActive
-                          ? color.withOpacity(0.3)
-                          : Colors.white.withOpacity(0.05),
+                          ? color.withValues(alpha: 0.3)
+                          : Colors.white.withValues(alpha: 0.05),
                     ),
                   ),
                   child: Material(
@@ -244,7 +246,7 @@ class _LogSidebarState extends State<LogSidebar> {
                               icon,
                               color: isActive
                                   ? color
-                                  : Colors.white.withOpacity(0.4),
+                                  : Colors.white.withValues(alpha: 0.4),
                               size: 16,
                             ),
                             const SizedBox(width: 12),
@@ -254,7 +256,7 @@ class _LogSidebarState extends State<LogSidebar> {
                                 style: TextStyle(
                                   color: isActive
                                       ? Colors.white
-                                      : Colors.white.withOpacity(0.6),
+                                      : Colors.white.withValues(alpha: 0.6),
                                   fontSize: 12,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: 'SF Mono',
@@ -270,7 +272,7 @@ class _LogSidebarState extends State<LogSidebar> {
                                 boxShadow: isActive
                                     ? [
                                         BoxShadow(
-                                          color: color.withOpacity(0.5),
+                                          color: color.withValues(alpha: 0.5),
                                           blurRadius: 4,
                                           spreadRadius: 1,
                                         ),
@@ -302,7 +304,7 @@ class _LogSidebarState extends State<LogSidebar> {
                   Text(
                     'Log Levels',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white.withValues(alpha: 0.5),
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       letterSpacing: 1,
@@ -312,7 +314,7 @@ class _LogSidebarState extends State<LogSidebar> {
                   Text(
                     '${widget.selectedLevels.length}/4',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.3),
+                      color: Colors.white.withValues(alpha: 0.3),
                       fontSize: 12,
                     ),
                   ),
@@ -327,13 +329,13 @@ class _LogSidebarState extends State<LogSidebar> {
                   margin: const EdgeInsets.only(bottom: 8),
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? color.withOpacity(0.1)
-                        : Colors.white.withOpacity(0.02),
+                        ? color.withValues(alpha: 0.1)
+                        : Colors.white.withValues(alpha: 0.02),
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: isSelected
-                          ? color.withOpacity(0.3)
-                          : Colors.white.withOpacity(0.05),
+                          ? color.withValues(alpha: 0.3)
+                          : Colors.white.withValues(alpha: 0.05),
                     ),
                   ),
                   child: Material(
@@ -355,7 +357,7 @@ class _LogSidebarState extends State<LogSidebar> {
                               _getLevelIcon(level),
                               color: isSelected
                                   ? color
-                                  : Colors.white.withOpacity(0.4),
+                                  : Colors.white.withValues(alpha: 0.4),
                               size: 16,
                             ),
                             const SizedBox(width: 12),
@@ -364,7 +366,7 @@ class _LogSidebarState extends State<LogSidebar> {
                               style: TextStyle(
                                 color: isSelected
                                     ? Colors.white
-                                    : Colors.white.withOpacity(0.6),
+                                    : Colors.white.withValues(alpha: 0.6),
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: 'SF Mono',
@@ -395,7 +397,7 @@ class _LogSidebarState extends State<LogSidebar> {
                 Text(
                   'Tags',
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.5),
+                    color: Colors.white.withValues(alpha: 0.5),
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                     letterSpacing: 1,
@@ -405,7 +407,7 @@ class _LogSidebarState extends State<LogSidebar> {
                 Text(
                   '${widget.selectedTags.length}/${widget.availableTags.length}',
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.3),
+                    color: Colors.white.withValues(alpha: 0.3),
                     fontSize: 12,
                   ),
                 ),
@@ -445,8 +447,8 @@ class _LogSidebarState extends State<LogSidebar> {
                                   : Icons.check_box_outline_blank,
                               size: 14,
                               color: isSelected
-                                  ? Colors.blue.withOpacity(0.8)
-                                  : Colors.white.withOpacity(0.3),
+                                  ? Colors.blue.withValues(alpha: 0.8)
+                                  : Colors.white.withValues(alpha: 0.3),
                             ),
                             const SizedBox(width: 8),
                             Expanded(
@@ -455,7 +457,7 @@ class _LogSidebarState extends State<LogSidebar> {
                                 style: TextStyle(
                                   color: isSelected
                                       ? Colors.white70
-                                      : Colors.white.withOpacity(0.4),
+                                      : Colors.white.withValues(alpha: 0.4),
                                   fontSize: 12,
                                   fontFamily: 'SF Mono',
                                 ),

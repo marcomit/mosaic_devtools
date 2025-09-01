@@ -91,7 +91,7 @@ class _ModulesInspectorViewState extends State<ModulesInspectorView>
                 ),
                 border: Border(
                   right: BorderSide(
-                    color: Colors.white.withOpacity(0.05),
+                    color: Colors.white.withValues(alpha: 0.05),
                     width: 1,
                   ),
                 ),
@@ -117,7 +117,7 @@ class _ModulesInspectorViewState extends State<ModulesInspectorView>
                       color: const Color(0xFF111111),
                       border: Border(
                         bottom: BorderSide(
-                          color: Colors.white.withOpacity(0.05),
+                          color: Colors.white.withValues(alpha: 0.05),
                         ),
                       ),
                     ),
@@ -127,10 +127,10 @@ class _ModulesInspectorViewState extends State<ModulesInspectorView>
                         Container(
                           margin: const EdgeInsets.only(right: 16),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.03),
+                            color: Colors.white.withValues(alpha: 0.03),
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
-                              color: Colors.white.withOpacity(0.1),
+                              color: Colors.white.withValues(alpha: 0.1),
                             ),
                           ),
                           child: Material(
@@ -145,7 +145,7 @@ class _ModulesInspectorViewState extends State<ModulesInspectorView>
                                 padding: const EdgeInsets.all(8),
                                 child: Icon(
                                   Icons.arrow_back_ios_new,
-                                  color: Colors.white.withOpacity(0.7),
+                                  color: Colors.white.withValues(alpha: 0.7),
                                   size: 16,
                                 ),
                               ),
@@ -170,7 +170,7 @@ class _ModulesInspectorViewState extends State<ModulesInspectorView>
                             Text(
                               'Auto-refresh',
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.6),
+                                color: Colors.white.withValues(alpha: 0.6),
                                 fontSize: 13,
                               ),
                             ),
@@ -182,7 +182,7 @@ class _ModulesInspectorViewState extends State<ModulesInspectorView>
                                   _autoRefresh = value;
                                 });
                               },
-                              activeColor: Colors.blue.withOpacity(0.8),
+                              activeColor: Colors.blue.withValues(alpha: 0.8),
                             ),
                           ],
                         ),
@@ -216,13 +216,13 @@ class _ModulesInspectorViewState extends State<ModulesInspectorView>
                                 Icon(
                                   Icons.view_module_outlined,
                                   size: 48,
-                                  color: Colors.white.withOpacity(0.1),
+                                  color: Colors.white.withValues(alpha: 0.1),
                                 ),
                                 const SizedBox(height: 16),
                                 Text(
                                   'Select a module',
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.3),
+                                    color: Colors.white.withValues(alpha: 0.3),
                                     fontSize: 16,
                                     fontWeight: FontWeight.w300,
                                   ),
@@ -231,7 +231,7 @@ class _ModulesInspectorViewState extends State<ModulesInspectorView>
                                 Text(
                                   'Choose a module from the sidebar to inspect its details',
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.2),
+                                    color: Colors.white.withValues(alpha: 0.2),
                                     fontSize: 13,
                                   ),
                                 ),
