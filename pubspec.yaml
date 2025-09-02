@@ -1,6 +1,6 @@
 name: mosaic_devtools
 description: "The official development toolkit for Mosaic."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/marcomit
 repository: https://github.com/marcomit/mosaic_devtools
 
